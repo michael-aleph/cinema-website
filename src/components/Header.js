@@ -5,7 +5,7 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <div className="header__logo">
-          <a href="index.html">
+          <a href="/">
             <img
               src="img\blaze-cinema-logo.png"
               alt="Blaze Logo"

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import Slider from "react-slick";
 import "./slick.css";
 import "./slick-theme.css";
@@ -154,12 +155,14 @@ export const SimpleSlider = () => {
   return (
     <Slider {...settings}>
       {movies.map((movie) => (
-        <div className="photo-div" key={movie.title}>
-          <img
-            className={movie.className}
-            src={movie.imageSrc}
-            alt={movie.imageAlt}
-          />
+        <div className="photo-div" key={movie.id}>
+          <Link to={`/films/${movie.id}`}>
+            <img
+              className={movie.className}
+              src={movie.imageSrc}
+              alt={movie.imageAlt}
+            />
+            </Link>
           {showInfoBlocks && <InfoBlock {...movie} />}
         </div>
       ))}
