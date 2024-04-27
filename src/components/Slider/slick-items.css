@@ -1,0 +1,39 @@
+.slick-picture {
+  height: 520px;
+  max-width: 400px;
+  border-radius: 30px;
+  object-fit: cover;
+  padding: 0 15px;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+.photo-div:hover img {
+  transform: scale(0.7) translateX(-100px) translateY(-100px);
+}
+
+
+.photo-div {
+  position: relative; 
+}
+
+.info-block {
+  position: absolute; /* Keep absolute positioning */
+  bottom: 0;          /* Position at the bottom */
+  width: 100%;        /* Set width to match container */
+  padding: 10px;       /* Add some padding for aesthetics */
+  margin-bottom: -10px;
+  padding-top: 0;
+  margin-top: 0;
+  box-sizing: border-box;  /* Ensure padding is included in width */
+  opacity: 0;            /* Initially hide the info blocks */
+  transition: opacity 0.7s ease-in-out;  /* Smooth transition on hover */
+  background-color: #f2f2f2;  /* Light grey background */
+  border-radius: 15px;       /* Set smooth corners */
+  line-height: 0.8;
+}
+
+
+.photo-div:hover .info-block {
+  opacity: 1;
+}

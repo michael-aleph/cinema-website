@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -35,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.separator {
+  border-top: 3px solid #574d4d;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  border-radius: 400px;
 }
