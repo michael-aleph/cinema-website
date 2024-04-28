@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams
 
 const FilmDetails = () => {
@@ -25,7 +25,7 @@ const FilmDetails = () => {
         age: "12+",
         duration: "2 години 11 хвилин",
         language: "Українська",
-        session: ["10-00", "12-00", "15-00"]
+        session: ["10-00", "12-00", "15-00", "18-00"]
       },
       {
         id: 2,
@@ -49,7 +49,7 @@ const FilmDetails = () => {
         age: "12+",
         duration: "2 години 35 хвилин",
         language: "Українська",
-        session: ["10-00", "12-00", "15-00"]
+        session: ["10-00", "12-00", "15-00", "18-00"]
       },
       {
         id: 3,
@@ -73,7 +73,7 @@ const FilmDetails = () => {
         age: "16+",
         duration: "1 година 42 хвилини",
         language: "Українська",
-        session: ["10-00", "12-00", "15-00"]
+        session: ["10-00", "12-00", "15-00", "18-00"]
       },
       {
         id: 4,
@@ -97,7 +97,7 @@ const FilmDetails = () => {
     age: "18+",
     duration: "1 година 59 хвилин",
     language: "Українська",
-    session: ["10-00", "12-00", "15-00"]
+    session: ["10-00", "12-00", "15-00", "18-00"]
   },
   {
     id: 5,
@@ -121,7 +121,7 @@ const FilmDetails = () => {
     age: "16+",
     duration: "1 година 42 хвилини",
     language: "Українська",
-    session: ["10-00", "12-00", "15-00"]
+    session: ["10-00", "12-00", "15-00", "18-00"]
   },
   {
     id: 6,
@@ -145,7 +145,7 @@ const FilmDetails = () => {
     age: "6+",
     duration: "1 година 35 хвилин",
     language: "Українська",
-    session: ["10-00", "12-00", "15-00"]
+    session: ["10-00", "12-00", "15-00", "18-00"]
   },
     {
       id: 7,
@@ -169,7 +169,7 @@ const FilmDetails = () => {
       age: "18+",
       duration: "1 година 40 хвилин",
       language: "Українська",
-      session: ["10-00", "12-00", "15-00"]
+      session: ["10-00", "12-00", "15-00", "18-00"]
     },
     {
     id: 8,
@@ -193,7 +193,7 @@ const FilmDetails = () => {
     age: "16+",
     duration: "1 година 48 хвилин",
     language: "Українська",
-    session: ["10-00", "12-00", "15-00"]
+    session: ["10-00", "12-00", "15-00", "18-00"]
     },
   ];
 
@@ -201,24 +201,47 @@ const FilmDetails = () => {
 
   const selectedFilm = movies.find((movie) => movie.id === parseInt(id)); // Find film by ID
 
+  const [showSessions, setShowSessions] = useState(false); // State for session popup visibility
+
+  const toggleSessions = () => {
+    setShowSessions(!showSessions); // Toggle session popup visibility
+  };
+
   return (
     <div className="film-details">
-      {selectedFilm && ( // Render details only if film is found
-        <>
-          <img className="picture-in-description"src= {selectedFilm.imageSrc}></img>
-          <div>
-          <h2>{selectedFilm.title}</h2>
-          <p><b>Країна:</b> {selectedFilm.country}</p>
-          <p><b>Жанр:</b> {selectedFilm.genre}</p>
-          <p><b>Акторський склад:</b> {selectedFilm.actors}</p>
-          <p><b>Вік:</b> {selectedFilm.age}</p>
-          <p><b>Тривалість:</b> {selectedFilm.duration}</p>
-          <p><b>Мова:</b> {selectedFilm.language}</p>
-          <p><b>Опис та сюжет:</b> {selectedFilm.description}</p> 
-          </div>         
-        </>
+      <div className="film-details__poster">
+        <img src={selectedFilm.imageSrc} alt={selectedFilm.imageAlt} className={selectedFilm.className} />
+      </div>
+      <div className="film-details__info">
+        <h2 className="film-details__title">{selectedFilm.title}</h2>
+        <div className="film-details__meta">
+          <span className="film-details__genre"><b>Жанр:</b> {selectedFilm.genre}</span>
+          <span className="film-details__year"> ({selectedFilm.year})</span>
+        </div>
+        <div className="film-details__actors"><b>Актори: </b>{selectedFilm.actors}</div>
+        <div className="film-details__description">
+          <p><b>Опис та сюжет: </b>{selectedFilm.description}</p>
+        </div>
+        <div className="film-details__additional">
+          <div className="film-details__age"><b>Вікова категорія: </b>{selectedFilm.age}</div>
+          <div className="film-details__duration"><b>Тривалість: </b>{selectedFilm.duration}</div>
+          <div className="film-details__language"><b>Мова: </b>{selectedFilm.language}</div>
+          <button className="film-details__button" onClick={toggleSessions}>Сеанси</button>
+        </div>
+      </div>
+
+      {showSessions && (
+        <div className="film-details__sessions">
+          <h3>Виберіть сеанс:</h3>
+          <ul>
+            {selectedFilm.session.map((sessionTime) => (
+              <li key={sessionTime}>
+                <button className="film-details__session-button">{sessionTime}</button>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
-      {!selectedFilm && <p>Film not found</p>} {/* Display message if film not found */}
     </div>
   );
 };
