@@ -1,5 +1,5 @@
 .slick-picture {
-  height: 520px;
+  height: 510px;
   max-width: 400px;
   border-radius: 30px;
   object-fit: cover;
@@ -39,6 +39,7 @@
 }
 
 
+/* CSS for FilmDetails start */
 .film-details {
   display: flex; /* Вмикає режим гнучкого макета */
   margin: 20px;
@@ -68,7 +69,6 @@
   line-height: 1.5;
 }
 
-/* CSS */
 .film-details__button,
 .film-details__session-button {
   background-color: #c8c8c8;
@@ -95,7 +95,7 @@
 }
 
 .film-details__button:hover,
-.film-details__session-button {
+.film-details__session-button:hover {
   background-color: #1e293b;
   color: #fff;
 }
@@ -103,3 +103,164 @@
 .film-details__sessions ul li {
   list-style: none;
 }
+
+/* CSS for FilmDetails end */
+
+/* CSS for BookingPage start */
+
+.film-info-small.centered {
+  text-align: center; /* Centers text within the div */
+}
+
+.curved-line {
+  width: 50%; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  background-color: #ddd; /* Adjust color */
+  border-radius: 0 0 1000% 1000%; /* Creates a bottom curve */
+  margin-bottom: 20px; /* Add spacing below the line */
+  margin: 0 auto;
+  background-color: #2a2f3a;
+}
+
+.name-curved-line {
+  text-align: center;
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 16px;
+}
+
+.seat-selection {
+  padding-top: 40px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  margin: 5px; /* Простір між місцями */
+  background-color: lightgray; /* Звичайний колір */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background-color: green; /* Колір для вибраних місць */
+}
+
+.seat .fa-chair {
+  font-size: 1.5em; /* Розмір іконки */
+}
+
+/* ModalStyles.css start */
+/* Modal overlay styling */
+.react-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content styling */
+.react-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields styling */
+.input {
+  margin-bottom: 12px;
+
+  label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    display: block;
+  }
+
+  input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+  }
+
+  input:focus {
+    border-color: #e08b3b;
+    outline: none;
+  }
+}
+
+/* Button styling */
+.button-group {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #808080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: rgba(0, 0, 0, 0.6) 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.button-group:hover {
+  background: #696969; /* Darken by about 10% */
+}
+
+
+.book-button {
+  background-color: #c8c8c8;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.book-button:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+.button-container,
+.chosen-place-container {
+  display: flex;
+  justify-content: center;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.error-message {
+  color: red;
+}
+/* ModalStyles.css end*/
+/* CSS for BookingPage end */
