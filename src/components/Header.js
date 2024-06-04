@@ -8,20 +8,12 @@ const Header = () => {
         <div className="header__logo">
           <a href="/">
             <img
-              src="img\blaze-cinema-logo.png"
+              src="https://i.ibb.co/pvrNt3c/blaze-cinema-logo.png"
               alt="Blaze Logo"
               className="header__logo-img"
             />
           </a>
         </div>
-        <nav className="header__nav">
-          <a href="/" className="header__nav-link">
-            Зараз в кіно
-          </a>
-          <a href="/coming-soon" className="header__nav-link">
-            Скоро в кіно
-          </a>
-        </nav>
         </div>
         <div className="header__info">
           <div className="header__location">
@@ -31,17 +23,16 @@ const Header = () => {
             <a href="https://maps.app.goo.gl/t76S6zJ5aABoN9dx6" target="_blank" className="no-underline">
               <img src="/img/geo-icon.png" alt="geo icon" className="header__geo-icon" />
             </a>
-            <a href="https://www.instagram.com/blaze.lake.plaza" target="_blank" className="no-underline">
-              <img src="/img/insta-icon.png" alt="insta icon" className="header__insta-icon" />
-            </a>
-            <a href="mailto:blaze.info@gmail.com" className="no-underline">
-              <img src="/img/mail-icon.png" alt="mail icon" className="header__mail-icon" />
-            </a>
-            <a href="tel:+380664050150" className="no-underline">
-              <img src="/img/phone-icon.png" alt="phone icon" className="header__phone-icon" />
-            </a>
-            <img src="/img/login-icon.png" alt="login icon" className="header__login-icon" />
-          </div>
+              <a href="https://www.instagram.com/blaze.lake.plaza" target="_blank" className="no-underline">
+                <img src="/img/insta-icon.png" alt="insta icon" className="header__insta-icon" />
+              </a>
+              <a href="mailto:blaze.info@gmail.com" className="no-underline">
+                <img src="/img/mail-icon.png" alt="mail icon" className="header__mail-icon" />
+              </a>
+              <a href="tel:+380664050150" className="no-underline">
+                <img src="/img/phone-icon.png" alt="phone icon" className="header__phone-icon" />
+              </a>
+            </div>
         </div>
       </div>
     </header>

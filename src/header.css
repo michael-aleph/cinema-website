@@ -12,33 +12,40 @@
   margin-right: 20px;
 }
 
+.header__logo {
+  margin-left: 10px;
+}
+
 .header__logo img { 
   width: 100px;
 }
 
-.header__location {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
-  margin-right: 0;
-}
-
 .header__geo-icon {
-  margin-right: 20px;
-  height: 30px;
-  width: 30px;
+  margin-right: 30px;
+  height: 35px;
+  width: 35px;
 }
 
 .no-underline {
   text-decoration: none;
 }
 
+.header__info {
+  display: flex;
+}
+
+.header__icons {
+  display: flex;
+  align-items: center; /* ця властивість центруватиме іконки по вертикалі */
+}
+
 .header__insta-icon,
 .header__mail-icon,
-.header__phone-icon, 
-.header__login-icon {
-  height: 40px;
-  width: 40px;
+.header__phone-icon {
+  height: 45px;
+  width: 45px;
   margin-right: 10px;
+  align-self: center;
 }
 
 .header__logo-and-nav {
@@ -46,9 +53,9 @@
   align-items: center; /* Align logo and links vertically */
 }
 
-.header__nav-link {
+.header__location {
   font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
-  font-size: 20px; /* Increase font size */
+  font-size: 22px; /* Increase font size */
   margin-right: 20px; /* Spacing between links */
   color: #333; /* Link text color */
   text-decoration: none; /* Remove default underline */
@@ -56,6 +63,7 @@
   border: 1px solid transparent; /* Add a subtle border */
   border-radius: 5px; /* Round the corners of the links */
   transition: background-color 0.3s ease; /* Smooth transition on hover */
+  margin-right: 0;
 }
 
 .header__nav-link:hover {

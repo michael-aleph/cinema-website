@@ -20,7 +20,7 @@
 .info-block {
   position: absolute; /* Keep absolute positioning */
   bottom: 0;          /* Position at the bottom */
-  width: 100%;        /* Set width to match container */
+  width: 99%;        /* Set width to match container */
   padding: 10px;       /* Add some padding for aesthetics */
   margin-bottom: -10px;
   padding-top: 0;
@@ -119,7 +119,7 @@
   border-radius: 0 0 1000% 1000%; /* Creates a bottom curve */
   margin-bottom: 20px; /* Add spacing below the line */
   margin: 0 auto;
-  background-color: #2a2f3a;
+  background-image: linear-gradient(to top, #1a1c23, #8c8c8c);
 }
 
 .name-curved-line {
@@ -152,6 +152,19 @@
   background-color: green; /* Колір для вибраних місць */
 }
 
+.seat.occupied {
+  background-color: rgb(200, 0, 0);
+  cursor: not-allowed;
+}
+
+.seat.available {
+  transition: transform 0.3s ease; /* Застосування плавної трансформації */
+}
+
+.seat.available:hover {
+  transform: scale(1.1);
+}
+
 .seat .fa-chair {
   font-size: 1.5em; /* Розмір іконки */
 }
@@ -179,31 +192,41 @@
   max-width: 500px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+.modal-text-info {
+  text-align: center;
+}
 
 /* Input fields styling */
 .input {
   margin-bottom: 12px;
-
-  label {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
-    display: block;
-  }
-
-  input {
-    width: 95%;
-    padding: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-    transition: border-color 0.2s ease;
-  }
-
-  input:focus {
-    border-color: #e08b3b;
-    outline: none;
-  }
 }
+
+.input__field {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  transition: border-color 0.4s ease;
+  margin-top: 5px;
+}
+
+.input__field:focus {
+  border-color: #6366f1;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.input__field::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.button-group:disabled {
+  background-color: #ccc; /* Світліший колір */
+  cursor: not-allowed; /* Курсор для відключеної кнопки */
+}
+
 
 /* Button styling */
 .button-group {
@@ -218,7 +241,7 @@
 }
 
 /* Hover effect for buttons */
-.button-group:hover {
+.button-group:not(:disabled):hover {
   background: #696969; /* Darken by about 10% */
 }
 
